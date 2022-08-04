@@ -23,4 +23,6 @@
 
 1. Issue 할당
 	(issue-new-assignees에 누구한테 이슈 할당할지 - Lables도 달아주면 좋다 - submit)
-2. Issue number가 생성되는데 
+	Issue number가 생성되는데 sourcetree에서 commit할 때 issue number 달아주면 ok
+
+2.
