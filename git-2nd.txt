@@ -1,0 +1,26 @@
+[핵심 쏙쏙 git] 2주차 정리
+
+1주차 복습----------------
+- 버전 관리: commit을 해서 버전이 달라지는 것을 관리하는 것
+- repo: (repository의 약자) 'git으로 관리되는 프로젝트'를 말함
+- 로컬repo: 내 컴퓨터에 저장되어 있는 리포지토리
+- 원격repo: 클라우드 개념. Github
+- commit: 현재 프로젝트의 상태를 저장하는 것
+	commit message: 작업 변경 내용을 잘 알 수 있게 쓰자!
+
+- add / staging: commit에 반영할 파일들을 선택하는 것.
+
+- tracking: 로컬repo와 원격repo를 연결하는 것 (설정-원격-추가-원격이름:origin/URL:https://<토큰 값>@github.com/<사용자명>/<레포지터리명>.git/호스트종류:Github/사용자명:jamie7dev-확인)
+
+
+- push: 로컬repo의 commit들을 원격repo에 올리기
+- pull: 원격repo의 commit들을 로컬repo로 땡겨오기
+- clone: 원격repo를 내 컴퓨터에 와서 초기repo 세팅하는 것
+
+---------------------------
+
+2주차
+
+1. Issue 할당
+	(issue-new-assignees에 누구한테 이슈 할당할지 - Lables도 달아주면 좋다 - submit)
+2. Issue number가 생성되는데 
