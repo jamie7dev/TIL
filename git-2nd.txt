@@ -21,8 +21,19 @@
 
 2주차
 
-1. Issue 할당
+1. Issue 할당(누가 이 작업을 할 것인지)
 	(issue-new-assignees에 누구한테 이슈 할당할지 - Lables도 달아주면 좋다 - submit)
 	Issue number가 생성되는데 sourcetree에서 commit할 때 issue number 달아주면 ok
+	Issue가 해결되었으면 close 하면 된다.
 
-2.
+2. Branch (각자 맡은 것을 작업하는 단계)
+	main에서 우클릭-브랜치 생성- feature/jjigae 이런 식으로 생성한다. (기능을 추가할 때 feature를 많이 사용)
+	branch를 merge 하고 나서는 깔끔하게 delete해준다.
+
+3. Merge (작업한 브랜치 합치기)
+	똥글뱅이를 main에 갖다 놓고 병합 눌러서 브랜치 하나씩 합친다.
+	브랜치를 나눴는데 여러 사람이 같은 파일을 가지고 수정할 경우 merge할 때 충돌이 일어나게 된다.
+
+4. Merge conflict
+	merge하고 나면 같은 파일을 수정했을 때 일어난 충돌을 ! 로 보여준다.
+	클릭해서 어느 부분이 겹쳤는지 확인하고 파일을 최종적으로 수정한 후 머지하기
