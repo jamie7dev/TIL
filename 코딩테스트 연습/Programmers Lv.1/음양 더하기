@@ -44,7 +44,7 @@ function solution(absolutes, signs) {
 function solution(absolutes, signs) {
     var answer = 0;
     for (let i = 0; i < absolutes.length; i++ ){
-        if (signs[i]){
+        if (signs[i]){                              //이미 signs 자체가 불리언이므로 '== true'를 안 넣어줘도 된다.
             answer += absolutes[i]
         }
         else {
