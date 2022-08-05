@@ -1,0 +1,26 @@
+문제 설명
+단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+
+재한사항
+s는 길이가 1 이상, 100이하인 스트링입니다.
+입출력 예
+s	return
+"abcde"	"c"
+"qwer"	"we"
+
+==========================
+
+function solution(s) {
+    var answer = s;                       //answer에 단어s를 집어넣고
+    let center = s.length / 2;            //단어의 길이를 2로 나눈 값, 그 숫자를 center라고 하자  
+    if (s.length % 2 == 1){               //단어의 길이를 2로 나누었을 때 나머지가 1, 즉 단어의 길이가 홀수면
+        answer = answer.charAt(center)    //charAt(index)는 지정된 위치의 문자를 반환하는 함수(구글링)
+    } else {                              //단어의 길이가 홀수라면 중간 위치 2개를 나타내야 하니까
+        result1 = answer.charAt(center-1) //중간값이라고 정한 center에서 -1 위치의 값을 result1이라고 하겠다.
+        result2 = answer.charAt(center)   //center값은 result2라고 하자.
+        answer = result1 + result2        //알파벳 개수가 홀수면 중간 두 개를 보여주라고 했으니까
+    }
+    return answer;
+}
+
+//new: .charAt() -> 지정된 위치의 문자를 반환하는 함수
