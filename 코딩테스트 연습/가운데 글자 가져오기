@@ -24,3 +24,4 @@ function solution(s) {
 }
 
 //new: .charAt() -> 지정된 위치의 문자를 반환하는 함수
+
