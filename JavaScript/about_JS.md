@@ -164,7 +164,7 @@
 
       console.log(a); // {number: 2}
       console.log(b); // {number: 2}
-      ```
+      ```  
       
       이런한 객체의 특징 때문에 객체를 복사하는 방법은 크게 두가지로 나뉜다.  
       1. 얕은 복사(Shallow Copy)
@@ -178,3 +178,50 @@
 
 
 -----------나중에 더 깊게 알아보자---------------
+
+
+
+>🐤 호이스팅과 TDZ는 무엇일까 ?
+
+
+- 스코프, 호이스팅, TDZ
+  1. Scope
+   '변수에 접근할 수 있는 범위' / '변수를 찾기 위한 규칙'
+  - 블록 레벨 스코프; 코드 블록 ``{}``내에서만 참조(접근) 가능한 범위
+  - 함수 레벨 스코프; 함수 코드 블록 내에서만 참조(접근) 가능한 범위
+                ES6부터 let을 사용하면 블록 레벨 스코프를 사용할 수 있다.
+  - 렉시컬 스코프
+  - 동적 스코프
+
+  대부분의 C기반 언어들은 블록 레벨 스코프를 따른다.  
+  하지만 Javascript는 함수 레벨 스코프를 따른다.
+  
+  Scope의 종류
+    1. 전역 스코프 (Global scope)
+    전역에 변수를 선언하면 어디서든지 참조할 수 있는 전역 스코프를 갖는 변수가 된다.
+    2. 지역 스코프 (Local scope / Function-level scope)
+    
+    ```js
+    var global = 'global'; //이렇게 전역에 선언하면
+    
+    function foo() {
+    var local = 'local';    //지역 스코프
+    console.log(global);    //어디서나 참조가 되고
+    console.log(local);
+    }
+    foo();
+    
+    console.log(global);    //global
+    console.log(local);     // Uncaught ReferenceError: local is not defined 에러가 난다.
+    ```
+  
+  
+  
+  
+
+
+
+- 함수 선언문과 함수 표현식에서 호이스팅 방식의 차이
+- 여러분이 많이 작성해온 let, const, var, function 이 어떤 원리로 실행되는지 알 수 있어요.
+- 실행 컨텍스트와 콜 스택
+- 스코프 체인, 변수 은닉화
