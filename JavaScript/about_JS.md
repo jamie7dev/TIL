@@ -333,3 +333,38 @@
       b() //Hello, 아름
       ```
       이렇게 a와 b라는 클로저를 생성하면 함수 내부적으로 접근이 가능하다.
+
+
+</br>
+</br>
+<aside>
+🐤 실습 과제
+
+
+
+- 콘솔에 찍힐 b 값을 예상해보고, 어디에서 선언된 “b”가 몇번째 라인에서 호출한 console.log에 찍혔는지, 왜 그런지 설명해보세요.
+주석을 풀어보고 오류가 난다면 왜 오류가 나는 지 설명하고 오류를 수정해보세요.
+    
+    ```jsx
+    let b = 1;
+    
+    function hi () {
+    
+    const a = 1;
+    
+    let b = 100;
+    
+    b++;
+    
+    console.log(a,b);
+    
+    }
+    
+    //console.log(a);
+    
+    console.log(b);
+    
+    hi();
+    
+    console.log(b);
+    ```
