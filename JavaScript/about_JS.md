@@ -279,19 +279,21 @@
     Call Stack에 쌓인 Context Stack이 최대치를 넘게 될 경우 ‘RangeError: Maximum call stack size exceeded’라는 에러가 발생합니다.   
     이 에러는 Stack Overflow라고 부르기도 합니다.
 
-![Context-Stack](https://user-images.githubusercontent.com/104494969/183912933-242ea59e-09b7-4ca8-9a9f-30fc5e7288f2.gif)
-    1. 코드의 전역 범위가 실행되며 Global Execution Context를 push합니다.
-    2. fn1이 실행됩니다.
-    3. fn1의 Functional Execution Context가 Call Stack에 push됩니다.
-    4. fn2이 실행됩니다.
-    5. fn2의 Functional Execution Context가 Call Stack에 push됩니다.
-    6. console.log가 실행됩니다.
-    7. console.log의 Functional Execution Context가 Call Stack에 push 됩니다.
-    8. console.log의 실행이 완료되며 console.log의 Functional Execution Context가 pop됩니다.
-    9. fn2의 실행이 완료되며 fn2의 Functional Execution Context가 pop됩니다.
-    10. fn1의 실행이 완료되며 fn1의 Functional Execution Context가 pop됩니다.
-    11. 앱 종료 시 Global Execution Context가 pop됩니다.
-
+![Context-Stack](https://user-images.githubusercontent.com/104494969/183912933-242ea59e-09b7-4ca8-9a9f-30fc5e7288f2.gif)   
+</br>
+    1. 코드의 전역 범위가 실행되며 Global Execution Context를 push합니다.   
+    2. fn1이 실행됩니다.   
+    3. fn1의 Functional Execution Context가 Call Stack에 push됩니다.      
+    4. fn2이 실행됩니다.   
+    5. fn2의 Functional Execution Context가 Call Stack에 push됩니다.   
+    6. console.log가 실행됩니다.   
+    7. console.log의 Functional Execution Context가 Call Stack에 push 됩니다.   
+    8. console.log의 실행이 완료되며 console.log의 Functional Execution Context가 pop됩니다.   
+    9. fn2의 실행이 완료되며 fn2의 Functional Execution Context가 pop됩니다.   
+    10. fn1의 실행이 완료되며 fn1의 Functional Execution Context가 pop됩니다.   
+    11. 앱 종료 시 Global Execution Context가 pop됩니다.   
+</br>
+</br>
 - 스코프 체인(Scope Chain)
 
      
