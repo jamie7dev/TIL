@@ -356,15 +356,14 @@
     
     b++;
     
-    console.log(a,b);
+    console.log(a,b);   //1,101
     
     }
     
-    //console.log(a);
+    //console.log(a);   //a는 지역스코프로 function() 내부에서 선언되었기 때문에 오류가 남. => 보완: 전역 변수로 선언해주자.
     
-    console.log(b);
+    console.log(b);     //1  b는 전역변수로 let b = 1;로 선언되었기 때문에
     
     hi();
     
-    console.log(b);
-    ```
+    console.log(b);     //1  b는 전역변수로 let b = 1;로 선언되었기 때문에
