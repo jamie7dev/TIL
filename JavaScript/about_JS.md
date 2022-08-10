@@ -143,8 +143,8 @@
 
 - 얕은 복사와 깊은 복사  
       원시값은 값을 복사 할 때 복사된 값을 다른 메모리에 할당 하기 때문에 원래의 값과 복사된 값이 서로에게 영향을 미치지 않는다
-      ```js
       
+      ```js
       const a = 1;
       let b = a;
 
@@ -167,20 +167,24 @@
       ```  
       
       이런한 객체의 특징 때문에 객체를 복사하는 방법은 크게 두가지로 나뉜다.  
-      1. 얕은 복사(Shallow Copy)
+      1. ``얕은 복사(Shallow Copy)``
+      </br>
+        바로 아래 단계의 값만 복사하는 방법 
         얕은 복사란 객체를 복사할 때 위의 예제처럼 원래값과 복사된 값이 같은 참조를 가리키고있는 것을 말한다.  
         객체안에 객체가 있을 경우 한개의 객체라도 원본 객체를 참조하고 있다면 이를 얕은 복사라고 한다.
 
 
 
-      2. 깊은 복사(Deep Copy)
+      2. ``깊은 복사(Deep Copy)``
+      </br>
+        내부의 모든 값들을 하나하나 찾아서 전부 복사하는 방법
         깊은 복사된 객체는 객체안에 객체가 있을 경우에도 원본과의 참조가 완전히 끊어진 객체를 말한다.
 
-
------------나중에 더 깊게 알아보자---------------
-
-
-
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
 >🐤 호이스팅과 TDZ는 무엇일까 ?
 
 
@@ -226,7 +230,7 @@
   var로 선언한 변수의 경우 호이스팅 시 undefined로 변수를 초기화합니다.     
   반면 let과 const로 선언한 변수의 경우 호이스팅 시 변수를 초기화하지 않습니다.  
   <br/>
-  ------------호이스팅도 중에 더 공부하기-------------
+  ------------호이스팅도 나중에 더 공부하기-------------
   
   
  4. ``TDZ``
@@ -238,8 +242,92 @@
 <img width="600" alt="스크린샷 2022-08-09 오후 10 56 36" src="https://user-images.githubusercontent.com/104494969/183667807-eaf72101-3bfa-41cf-a340-3894cecfcb76.png">
 
 - 함수 선언문과 함수 표현식에서 호이스팅 방식의 차이
+  - 함수 선언문(function declartion) : 함수명이 정의되어 있고, 별도의 할당 명령이 없는 것
+  ```js
+  function sum(a,b) {
+      return a + b;
+  }
+  ```
 
+  - 함수 표현식 (function Expression) : 정의한 function을 별도의 변수에 할당하는 것
+  ```js
+  const sum = function(a,b) {
+      return a + b;
+  }
+  ```
+  
+  - **호이스팅 방식의 차이**
+    - 함수 선언식은 함수 전체를 호이스팅한다. 정의된 범위의 맨 위로 호이스팅되서 함수 선언 전에 함수를 사용할 수 있다는 것.
+    - 함수 표현식은 별도의 변수에 할당하게 되는데, 변수는 선언부와 할당부를 나누어 호이스팅 하게 된다. 선언부만 호이스팅하게 된다.
+  
 
-- 여러분이 많이 작성해온 let, const, var, function 이 어떤 원리로 실행되는지 알 수 있어요.
 - 실행 컨텍스트와 콜 스택
-- 스코프 체인, 변수 은닉화
+
+  - Execution Context(실행 컨텍스트)란?
+  자바스크립트 엔진이 코드를 실행하기 위해선 코드에 대한 정보들이 필요합니다.   
+  코드에 선언된 변수와 함수, 스코프, this, arguments 등을 묶어, 코드가 실행되는 위치를 설명한다는 뜻의 Execution Context라고 부릅니다.   
+  자바스크립트 엔진은 Execution Context를 객체로 관리하며 코드를 Execution Context 내에서 실행합니다.
+  
+  - Execution Context의 관리: CallStack
+    js 엔진은 생성된 Context를 관리하는 목적의 Call Stack(호출스택)을 갖고 있습니다.   
+    JS는 단일 스레드 형식이기 때문에 런타임에 단 하나의 Call Stack이 존재합니다.   
+    js 엔진은 전역 범위의 코드를 실행하며 Global Execution Context를 생성해 stack에 push합니다.   
+    그리고 함수가 실행 또는 종료 될 때마다 Global Execution Context의 위로 Functional Execution Context stack을 push(추가), pop(제거)합니다.
+</br>
+    
+    - Call Stack은 최대 stack 사이즈가 정해져있습니다.   
+    Call Stack에 쌓인 Context Stack이 최대치를 넘게 될 경우 ‘RangeError: Maximum call stack size exceeded’라는 에러가 발생합니다.   
+    이 에러는 Stack Overflow라고 부르기도 합니다.
+
+![Context-Stack](https://user-images.githubusercontent.com/104494969/183912933-242ea59e-09b7-4ca8-9a9f-30fc5e7288f2.gif)
+    1. 코드의 전역 범위가 실행되며 Global Execution Context를 push합니다.
+    2. fn1이 실행됩니다.
+    3. fn1의 Functional Execution Context가 Call Stack에 push됩니다.
+    4. fn2이 실행됩니다.
+    5. fn2의 Functional Execution Context가 Call Stack에 push됩니다.
+    6. console.log가 실행됩니다.
+    7. console.log의 Functional Execution Context가 Call Stack에 push 됩니다.
+    8. console.log의 실행이 완료되며 console.log의 Functional Execution Context가 pop됩니다.
+    9. fn2의 실행이 완료되며 fn2의 Functional Execution Context가 pop됩니다.
+    10. fn1의 실행이 완료되며 fn1의 Functional Execution Context가 pop됩니다.
+    11. 앱 종료 시 Global Execution Context가 pop됩니다.
+
+- 스코프 체인(Scope Chain)
+
+     
+    스코프는 함수의 중첩에 의해 계층적 구조를 가진다.   
+
+    변수를 참조할 때, 자바스크립트 엔진은 스코프 체인을 통해 변수를 참조하는 코드의 스코프에서 시작하여 상위 스코프로 이동하면서 선언된 변수를 검색한다.   
+
+    스코프 체인은 outerEnvironmentReference와 밀접한 관계를 가진다.   
+
+    💡 스코프 체인은 실행 컨텍스트의 렉시컬 환경을 '단방향'으로 연결한 링크드 리스트   
+    
+![image](https://user-images.githubusercontent.com/104494969/183913406-350f243a-e7e1-44b9-bc0f-40e4e0b229c6.png)
+
+
+- 변수 은닉화 (variable shadowing)
+
+    여러 스코프에서 동일한 식별자를 선언한 경우, 무조건 스코프 체인 상에서 가장 먼저 검색된 식별자에만 접근이 가능하다.
+    ```js
+    (function s(){
+    let a = 'hi'
+    })() //a is not defined
+    ```
+    즉, 직접적으로 변경되면 안되는 변수에 대한 접근을 막는것이다.
+
+     ```js
+     function hello(name) {
+        let _name = name;
+        return function () {
+          console.log('Hello, ' + _name);
+        };
+      }
+
+      let a = new hello('영서');
+      let b = new hello('아름');
+
+      a() //Hello, 영서
+      b() //Hello, 아름
+      ```
+      이렇게 a와 b라는 클로저를 생성하면 함수 내부적으로 접근이 가능하다.
