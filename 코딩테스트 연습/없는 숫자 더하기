@@ -43,3 +43,4 @@ function solution(numbers) {
     answer = 45-answer;
     return answer;
 }
+
