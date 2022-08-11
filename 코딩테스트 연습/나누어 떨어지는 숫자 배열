@@ -66,3 +66,15 @@ function solution(arr, divisor) {
     });
     return answer;
 }
+
+
+////////////////////숫자 오름차순 정렬
+숫자 배열에 sort() 수행 시, 숫자를 문자열로 변환하여 정렬.
+11이 '1'이 들어가서 9보다 앞으로 정렬되므로 추가 함수 사용!
+a가 크면 양수, b가 크면 음수, 같으면 0이 리턴.
+const arr = [22, 11, 2, 9, 1, 5];
+
+arr.sort(function (a, b) {
+  return a - b;
+});
+console.log(arr);       //[ 1, 2, 5, 9, 11, 22 ]
