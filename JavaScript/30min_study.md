@@ -109,13 +109,15 @@ let square = x => x ** 2;
 > ### DOM
 [Document Object Model]
 브라우저가 HTML을 인식하는 방식을 계층화시켜 트리 구조로 만든 Object Model.
-1. 웹 브라우저는 정적인 HTML 문서를 해석해서
-2. 요소들을 트리 형태로 구조화한 문서(데이터)를 생성 = DOM을 생성
-3. 화면에 해석한 결과를 보여주는 렌더링을 함.
+<br/>
+1. 웹 브라우저는 정적인 HTML 문서를 해석해서   
+2. 요소들을 트리 형태로 구조화한 문서(데이터)를 생성 = DOM을 생성   
+3. 화면에 해석한 결과를 보여주는 렌더링을 함.   
 ![](https://velog.velcdn.com/images/jamie7dev/post/bcd121d3-e1da-44a1-8cf5-1a8a5a2cec0a/image.png)
+<br/>
 - DOM을 쓰는 목적
-HTML은 정적인 Text => 웹이 사용자와 동적으로 상호작용하려면 
-Javascript를 사용해서 웹 콘텐츠를 추가, 수정, 삭제, 이벤트 처리 등을 하게 되는데 
+HTML은 정적인 Text => 웹이 사용자와 동적으로 상호작용하려면   
+Javascript를 사용해서 웹 콘텐츠를 추가, 수정, 삭제, 이벤트 처리 등을 하게 되는데    
 JS로 작성하면 DOM에 그 결과가 반영되고 웹페이지가 다시 렌더링되는 그런 개념...
 
 
